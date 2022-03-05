@@ -1,0 +1,38 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N806" />
+          <option value="N801" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="str.Success" />
+          <option value="str.Message" />
+          <option value="str.Data" />
+          <option value="dict.amount" />
+          <option value="dict.bookQty" />
+          <option value="dict.refeNo" />
+          <option value="dict.currency" />
+          <option value="dict.depot" />
+          <option value="dict.voyage" />
+          <option value="dict.blNo" />
+          <option value="dict.vesselName" />
+          <option value="dict.expiryDate" />
+          <option value="dict.operCode" />
+          <option value="dict.conSize" />
+          <option value="dict.contType" />
+          <option value="dict.dataCont" />
+          <option value="dict.transName" />
+          <option value="dict.contact" />
+          <option value="dict.teleNo" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
