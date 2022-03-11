@@ -1,0 +1,51 @@
+# ### .gitignore忽略规则
+# 1.空格不匹配任何文件，可作为分隔符，可用反斜杠转义
+# 2.#开头的文件标识注释，可以使用反斜杠进行转义
+# 3.！开头的模式标识否定，该文件将会再次被包含，如果排除了该文件的父级目录，则使用！也不会被再次包含。
+# 4./结束的模式只匹配文件夹以及在该文件夹路径下的内容，但是不匹文件
+# 5./开始的模式匹配项目根目录
+# 6.如果一个模式不包含斜杠，则它匹配相对于当前.gitignore文件路径的内容，如果该模式不在.gitignore文件中，
+# 则相对于项目根目录
+# 7.**匹配多级目录，可以在开始，中间，结束
+# 8.？通用匹配单个字符
+# 9.[]通用匹配单个字符列表
+
+# ### TIPS ###
+# .gitignore不生效的情况
+## .gitignore只能忽略哪些原来没有被track的文件，如果某些文件已经被纳入版本管理中，则修改.gitignore是无效的。
+## 解决方法是首先把本地缓存删除（改变成未track状态），然后在提交
+## git rm -r --cached .
+## git add .
+## git commit -m "更新.gitignore"
+
+# logs
+logs/*.log
+# IDEs and editors
+/.idea
+
+# Rope project settings
+.ropeproject
+.idea
+.idea/*.iml
+.idea/*.xml
+.idea/dictionaries/
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/sqldialects.xml
+.idea/storage-ai-server-manager.iml
+.idea/workspace.xml
+
+__pycache__
+__pycache__/
+.pyc
+file/
+.vscode/
+
+# dotenv
+.env
+# virtualenv
+.venv
+venv/
+ENV/
+.run/
