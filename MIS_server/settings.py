@@ -119,6 +119,15 @@ DATABASES = {
 
 AUTH_USER_MODEL = 'app.User'
 
+# 邮箱设置
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = "smtp.qq.com"   # 服务器
+EMAIL_PORT = 25               # 一般情况下都为25
+EMAIL_HOST_USER = "1796942796@qq.com"   # 用户名，可自定义
+EMAIL_HOST_PASSWORD = "jlpiwzjbyiuibfig"  # 邮箱授权码
+EMAIL_USE_TLS = False             # 一般都为False
+EMAIL_FROM = "MIS<1796942796@qq.com>"        # 发送人
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

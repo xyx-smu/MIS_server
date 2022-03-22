@@ -1,7 +1,9 @@
 from jwt import decode
+from rest_framework import serializers
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer, TokenVerifySerializer
 
 from MIS_server import settings
+from app.models import EmailVerifyRecord
 
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
