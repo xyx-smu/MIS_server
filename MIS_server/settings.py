@@ -13,6 +13,8 @@ from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import key
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -124,7 +126,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = "smtp.qq.com"   # 服务器
 EMAIL_PORT = 25               # 一般情况下都为25
 EMAIL_HOST_USER = "1796942796@qq.com"   # 用户名，可自定义
-EMAIL_HOST_PASSWORD = "qflkyvficvmhcejc"  # 邮箱授权码
+EMAIL_HOST_PASSWORD = key.email_pwd  # 邮箱授权码
 EMAIL_USE_TLS = False             # 一般都为False
 EMAIL_FROM = "MIS<1796942796@qq.com>"        # 发送人
 
