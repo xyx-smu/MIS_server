@@ -41,6 +41,7 @@ __pycache__/
 .pyc
 file/
 .vscode/
+key.py
 
 # dotenv
 .env
