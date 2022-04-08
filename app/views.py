@@ -1,12 +1,11 @@
 import json
 import time
-from datetime import datetime, timedelta
+from datetime import datetime
 
 from django.contrib.auth.hashers import check_password, make_password
 from django.http import JsonResponse, HttpResponse
 from django.views import View
 from rest_framework.response import Response
-from rest_framework.views import APIView
 from rest_framework_simplejwt.views import TokenRefreshView, TokenObtainPairView, TokenViewBase
 
 from app import models
@@ -21,6 +20,7 @@ class MyObtainTokenPairView(TokenObtainPairView):
 
 class LoginView(MyObtainTokenPairView, CommonResponseMixin):
     """登录视图"""
+    serializer_class = MyTokenVerifySerializer
 
     def post(self, request, *args, **kwargs):
         user_info = request.data
@@ -57,10 +57,6 @@ class RefreshTokenView(TokenRefreshView, CommonResponseMixin):
             print(e)
             response = self.wrap_json_response(code=ReturnCode.UNAUTHORIZED, message="您提供的refresh-token已经失效")
         return Response(response)
-
-
-class MyTokenVerifyView(TokenViewBase):
-    serializer_class = MyTokenVerifySerializer
 
 
 class RegisterView(View, CommonResponseMixin):
@@ -129,7 +125,7 @@ def verify_info(request, *args, **kwargs):
             now_time = datetime.now().timestamp()
             diff = round((now_time - code_time))
             if curr_code == data['emailCode']:
-                if diff < 5*60:
+                if diff < 5 * 60:
                     res = {'code': ReturnCode.SUCCESS, 'message': '身份验证成功'}
                 else:
                     res = {'code': ReturnCode.FAILED, 'message': '该验证码已过期，请重新获取！'}
